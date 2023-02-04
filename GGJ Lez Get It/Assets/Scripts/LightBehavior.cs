@@ -38,6 +38,10 @@ public class LightBehavior : MonoBehaviour
         //targetSize = maxAngle;
         slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
         slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
+        if (slight.spotAngle <= 1.0f)
+        {
+            gameObject.GetComponentInParent<PlayerController>().SelfDestruct();
+        }
     }
 
     public void KillLight()

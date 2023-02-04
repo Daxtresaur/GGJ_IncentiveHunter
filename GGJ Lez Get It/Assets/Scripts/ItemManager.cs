@@ -33,7 +33,7 @@ public class ItemManager : MonoBehaviour
 
         if (lurePrefab == null) return;
         lureAmount--;
-        m_TextMeshPro.SetText($"MONSTER LURE: {lureAmount}");
+        m_TextMeshPro.SetText($"MONSTER LURE x {lureAmount}");
         GameObject lureClone = Instantiate(lurePrefab, transform.position, Quaternion.identity);
         SoundManager.instance.PlaySFX(stoneThrow);
         Destroy(lureClone, 10.0f);

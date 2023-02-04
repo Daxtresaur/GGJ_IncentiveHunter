@@ -35,7 +35,7 @@ public class SpawnPreStartText : MonoBehaviour
         if (index >= startListDialogues.Capacity)
         {
             Debug.Log("index"+index);
-            SceneManager.LoadScene(sceneName: "Scene");
+            SceneManager.LoadScene(sceneName: "GameScene");
 
         }
         else

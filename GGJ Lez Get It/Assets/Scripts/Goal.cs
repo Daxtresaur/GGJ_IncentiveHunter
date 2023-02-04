@@ -5,6 +5,7 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public GameObject canvas;
+    public blackout Blackout;
     GameObject monster;
     PlayerController playerController;
     private void Awake()
@@ -18,6 +19,7 @@ public class Goal : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         canvas.SetActive(true);
+        Blackout.FadeWin();
         Destroy(monster);
         Camera.main.transform.SetParent(null);
         playerController.gameObject.SetActive(false);

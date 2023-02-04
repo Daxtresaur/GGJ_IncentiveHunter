@@ -12,10 +12,11 @@ public class blackout : MonoBehaviour
 	public float duration = 5f;
 	private bool mFaded = false;
 	public AudioSource treeChop;
+    public GameObject canvas;
 
 	private void Start()
 	{
-		StartCoroutine(DoFadeWin(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
+		//StartCoroutine(DoFadeWin(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
 
 	}
 	public void Fade()
@@ -79,7 +80,8 @@ public class blackout : MonoBehaviour
 
 			yield return null;
 		}
-
+		this.gameObject.SetActive(false);
+		this.canvas.SetActive(true);
 
 	}
 
