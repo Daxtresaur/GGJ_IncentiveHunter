@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1878578450387443693}
   - component: {fileID: 8969258807729203156}
-  - component: {fileID: 5138449342920588288}
   m_Layer: 3
   m_Name: Spot Light (1)
   m_TagString: Untagged
@@ -95,21 +94,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &5138449342920588288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2523063661768803181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 680dab9af30ce0a4b82ae056c062d781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shrinkRate: 1
-  maxAngle: 50
-  biggerAngle: 150
 --- !u!1 &6558474198422289379
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6558474198422289379}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,6 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bd7ecc15d3e4e42a0998ba880d417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   walkSpeed: 3
   runSpeed: 5
   lighterFuel: 100
@@ -623,8 +608,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: -0.05, z: -0.32}
+  m_Size: {x: 1, y: 1, z: 1.21}
+  m_Center: {x: 0, y: -0.05, z: -0.04}
 --- !u!114 &237883606428882950
 MonoBehaviour:
   m_ObjectHideFlags: 0

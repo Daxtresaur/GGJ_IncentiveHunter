@@ -8164,6 +8164,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 6715880196296202689, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6715880196296202693, guid: af52984a20dca1d439acc0e729269024, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8178,7 +8182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6715880196296202695, guid: af52984a20dca1d439acc0e729269024, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6715880196296202695, guid: af52984a20dca1d439acc0e729269024, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8211,6 +8215,14 @@ PrefabInstance:
     - target: {fileID: 6715880196296202695, guid: af52984a20dca1d439acc0e729269024, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715880196296202700, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: m_Size.z
+      value: 1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715880196296202700, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: m_Center.z
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af52984a20dca1d439acc0e729269024, type: 3}

@@ -9,6 +9,7 @@ public enum MovementStates
 }
 public class PlayerController : MonoBehaviour
 {
+    public Animator animator;
     public Action<MovementStates> OnPlayerMove;
     [SerializeField] private float walkSpeed = 3.0f;
     [SerializeField] private float runSpeed = 5.0f;
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
         //rb = GetComponent<Rigidbody>();
         HP = GetComponent<HealthComponent>();
-
+        animator = GetComponentInChildren<Animator>();
         Speed = WalkSpeed;
     }
 
@@ -101,21 +102,31 @@ public class PlayerController : MonoBehaviour
         direction3D.z = direction.y;
 
         transform.position += Speed * Time.fixedDeltaTime * direction3D;
-
-        if(Speed == RunSpeed)
+        if (direction.y == 0.0f && direction.x == 0.0f)
         {
-            OnPlayerMove?.Invoke(MovementStates.running);
-        }
-        else if(Speed == WalkSpeed)
-        {
-            OnPlayerMove?.Invoke(MovementStates.walking);
+            animator.StopPlayback();
+            animator.Play("GirlIdle");
         }
         else
         {
-            OnPlayerMove?.Invoke(MovementStates.slow);
+            if (direction.x > 0.0f)
+            {
+                animator.Play("GirlRight");
+            }
+            else if (direction.x < 0.0f)
+            {
+                animator.Play("GirlLeft");
+            }
+            else if (direction.y > 0.0f)
+            {
+                animator.Play("GirlUp");
+            }
+            else if (direction.y < 0.0f)
+            {
+                animator.Play("GirlDown");
+            }
         }
-
-	}
+    }
 	public void UseLighter()
     {
         lighter.SetActive(true);
@@ -128,6 +139,12 @@ public class PlayerController : MonoBehaviour
 		lighterOn = false;
 
 	}
+
+    public void PlayAudio(AudioClip clip)
+    {
+        SoundManager.instance.PlaySFX(clip);
+    }
+
     public void FuelBurner()
     {
         if (lighterOn && lighterFuel > 0)

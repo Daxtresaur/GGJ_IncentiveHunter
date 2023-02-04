@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GirlLeft
+  m_Name: GirlIdle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: c30bad4b1ae25bb4b87a3caac4dc75e4, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 9d3d1a82b7ee0514f82b92bc7f901f06, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 995ab4a4102ed6c48bb680ffd7812606, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 5c8ea0b3024b09647b6fd8721da2da61, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: c30bad4b1ae25bb4b87a3caac4dc75e4, type: 3}
+      value: {fileID: 21300000, guid: f1fd9596fbf303b4cb757f18df85b6ca, type: 3}
     attribute: m_Sprite
     path: 1
     classID: 212
@@ -48,17 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: c30bad4b1ae25bb4b87a3caac4dc75e4, type: 3}
-    - {fileID: 21300000, guid: 9d3d1a82b7ee0514f82b92bc7f901f06, type: 3}
-    - {fileID: 21300000, guid: 995ab4a4102ed6c48bb680ffd7812606, type: 3}
-    - {fileID: 21300000, guid: 5c8ea0b3024b09647b6fd8721da2da61, type: 3}
-    - {fileID: 21300000, guid: c30bad4b1ae25bb4b87a3caac4dc75e4, type: 3}
+    - {fileID: 21300000, guid: f1fd9596fbf303b4cb757f18df85b6ca, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -77,18 +65,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.16666667
-    functionName: PlayAudio
-    data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 628b106939c4a474ca60a2e1cb210cb0, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.5
-    functionName: PlayAudio
-    data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 628b106939c4a474ca60a2e1cb210cb0, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
