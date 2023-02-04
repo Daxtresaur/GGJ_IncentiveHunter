@@ -36,4 +36,10 @@ public class ItemManager : MonoBehaviour
         GameObject lureClone = Instantiate(lurePrefab, transform.position, Quaternion.identity);
         Destroy(lureClone, 10.0f);
     }
+
+    public void GetLure()
+    {
+        lureAmount++;
+        lureAmount = Mathf.Clamp(lureAmount, 0, 3);
+    }
 }
