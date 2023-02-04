@@ -55,6 +55,14 @@ public class PlayerController : MonoBehaviour
         SetState(AliveState);
     }
 
+    public void OnRun(InputValue value)
+    {
+        if(value.isPressed)
+            Speed = initialSpeed * 2.0f;
+        else
+            Speed = initialSpeed;
+    }
+
     public void OnMove(InputValue value)
     {
         direction = value.Get<Vector2>().normalized;

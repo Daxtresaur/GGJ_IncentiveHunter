@@ -34,8 +34,8 @@ public class SafeZone : MonoBehaviour
     private void Awake()
     {
         monster = FindObjectOfType<MonsterBehavior>();
-        sLight = GetComponent<Light>();
-        col = GetComponent<SphereCollider>();
+        //sLight = GetComponent<Light>();
+        //col = GetComponent<SphereCollider>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -45,10 +45,6 @@ public class SafeZone : MonoBehaviour
         lb.IncreaseLight();
         //StartCoroutine(DecreaseSafe());
 
-        if (other.TryGetComponent(out PlayerController player))
-        {
-            player.Speed = player.InitialSpeed;
-        }
         if (other.TryGetComponent(out HealthComponent HP))
         {
             HP.Heal();
@@ -60,10 +56,6 @@ public class SafeZone : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if(other.TryGetComponent(out PlayerController player))
-        {
-            player.Speed = player.InitialSpeed;
-        }
         lb.DecreaseLight();
         lb = null;
     }

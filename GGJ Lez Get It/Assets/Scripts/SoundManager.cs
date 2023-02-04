@@ -5,6 +5,18 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     [SerializeField] private AudioSource SFX;
     [SerializeField] private AudioSource Ambience;
     [SerializeField] private AudioSource Music;

@@ -332,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ea72e6ec3eaa343a92f6210a6519d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolSpeed: 1
-  chaseSpeed: 3
+  patrolSpeed: 2.5
+  chaseSpeed: 5
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
