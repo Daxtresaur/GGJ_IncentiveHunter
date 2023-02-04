@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnText : MonoBehaviour
 {
@@ -16,14 +17,15 @@ public class SpawnText : MonoBehaviour
     {
 
         hasStarted = true;
-        ReplaceText();
+        
         endDialogues.Add( "You are me.");
         endDialogues.Add("And I am you.");
         endDialogues.Add("It was never our fault.");
         endDialogues.Add("The tree has long been fallen.");
         endDialogues.Add("My brother has long been in peace.");
         endDialogues.Add("I understand now.");
-
+        endDialogues.TrimExcess();
+        ReplaceText();
     }
 
 
@@ -32,8 +34,8 @@ public class SpawnText : MonoBehaviour
     {
         if (index >= endDialogues.Capacity)
         {
-            //TODO: return to main menu
-            
+            SceneManager.LoadScene(sceneName: "MainMenu");
+
         }
         else
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnPreStartText : MonoBehaviour
 {
@@ -13,15 +14,17 @@ public class SpawnPreStartText : MonoBehaviour
 
     private void Start()
     {
-
+        index = 0;
         hasStarted = true;
-        ReplaceText();
-        //startListDialogues.Add("I’ve been fighting you");
+        startListDialogues.Add("I’ve been fighting you");
         startListDialogues.Add("Ever since that day");
         startListDialogues.Add("When the tree I loved to climb upon fell");
         startListDialogues.Add("Why must he fall as well?");
         startListDialogues.Add("I was there with him.");
         startListDialogues.Add("Why not me?");
+        startListDialogues.TrimExcess();
+        ReplaceText();
+        
 
     }
 
@@ -31,11 +34,13 @@ public class SpawnPreStartText : MonoBehaviour
     {
         if (index >= startListDialogues.Capacity)
         {
-            //TODO: return to main menu
+            Debug.Log("index"+index);
+            SceneManager.LoadScene(sceneName: "Scene");
 
         }
         else
         {
+            Debug.Log("index" + index + "/ max: " + startListDialogues.Capacity);
             this.gameObject.GetComponent<TextMeshProUGUI>().text = startListDialogues[index];
             index++;
         }
