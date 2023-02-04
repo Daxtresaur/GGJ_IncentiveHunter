@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float Speed;
 
     private Vector2 direction;
-    private Rigidbody rb;
+    //private Rigidbody rb;
     Vector3 direction3D = new();
 
     #region States
@@ -32,9 +32,19 @@ public class PlayerController : MonoBehaviour
         //Set initial state
         currentState.OnStart(this);
     }
+
+    public static PlayerController instance;
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        //rb = GetComponent<Rigidbody>();
         HP = GetComponent<HealthComponent>();
 
         Speed = initialSpeed;
@@ -68,7 +78,7 @@ public class PlayerController : MonoBehaviour
         direction3D.y = 0.0f;
         direction3D.z = direction.y;
 
-        rb.MovePosition(Speed * Time.fixedDeltaTime * direction3D + rb.position);
+        transform.position += Speed * Time.fixedDeltaTime * direction3D;
     }
 
     public void SelfDestruct()
