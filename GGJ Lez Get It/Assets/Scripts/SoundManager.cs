@@ -5,6 +5,18 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager instance;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     [SerializeField] private AudioSource SFX;
     [SerializeField] private AudioSource Ambience;
     [SerializeField] private AudioSource Music;
@@ -16,11 +28,22 @@ public class SoundManager : MonoBehaviour
         SFX.PlayOneShot(clip);
     }
 
+    public void StopSFX(AudioClip clip)
+    {
+        SFX.Stop();
+    }
+
     public void PlayAmbience(AudioClip clip, bool looping = true)
     {
+        if (Ambience.isPlaying) return;
         Ambience.clip = clip;
         Ambience.loop = looping;
         Ambience.Play();
+    }
+
+    public void StopAmbience()
+    {
+        Ambience.Stop();
     }
 
     public void PlayMusic(AudioClip clip, bool looping = true)

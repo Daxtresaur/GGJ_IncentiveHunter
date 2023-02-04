@@ -3,15 +3,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum MovementStates
+{
+    walking, running, slow
+}
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float initialSpeed = 3.0f;
-	[SerializeField] private float lighterFuel = 100.0f;
+    public Action<MovementStates> OnPlayerMove;
+    [SerializeField] private float walkSpeed = 3.0f;
+    [SerializeField] private float runSpeed = 5.0f;
+    [SerializeField] private float lighterFuel = 100.0f;
 
 	[SerializeField] private bool lighterOn = true;
 
 	[SerializeField] private GameObject lighter;
-	public float InitialSpeed { get { return initialSpeed; } }
+	public float WalkSpeed { get { return walkSpeed; } }
+    public float RunSpeed { get { return runSpeed; } }
+    public float SlowSpeed { get { return walkSpeed / 2.0f; } }
     public float Speed;
 
     private Vector2 direction;
@@ -52,12 +60,21 @@ public class PlayerController : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
         HP = GetComponent<HealthComponent>();
 
-        Speed = initialSpeed;
+        Speed = WalkSpeed;
     }
 
     private void Start()
     {
         SetState(AliveState);
+    }
+
+    public void OnRun(InputValue value)
+    {
+        Debug.Log("Running");
+        if(value.isPressed)
+            Speed = RunSpeed;
+        else
+            Speed = WalkSpeed;
     }
 
     public void OnMove(InputValue value)
@@ -85,6 +102,19 @@ public class PlayerController : MonoBehaviour
 
         transform.position += Speed * Time.fixedDeltaTime * direction3D;
 
+        if(Speed == RunSpeed)
+        {
+            OnPlayerMove?.Invoke(MovementStates.running);
+        }
+        else if(Speed == WalkSpeed)
+        {
+            OnPlayerMove?.Invoke(MovementStates.walking);
+        }
+        else
+        {
+            OnPlayerMove?.Invoke(MovementStates.slow);
+        }
+
 	}
 	public void UseLighter()
     {
@@ -110,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
 			lighter.SetActive(false);
         }
-		Debug.Log(lighterFuel);
+		//Debug.Log(lighterFuel);
 	}
 
 

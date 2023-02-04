@@ -36,10 +36,18 @@ public class DangerZone : MonoBehaviour
             health = HP;
             InZone = true;
         }
+    }
 
-        if(other.TryGetComponent(out PlayerController controller))
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player"))
         {
-            controller.Speed = controller.InitialSpeed / 2.0f;
+            return;
+        }
+
+        if (other.TryGetComponent(out PlayerController controller))
+        {
+            controller.Speed = controller.SlowSpeed;
         }
     }
 
@@ -53,7 +61,7 @@ public class DangerZone : MonoBehaviour
 
         if (other.TryGetComponent(out PlayerController controller))
         {
-            controller.Speed = controller.InitialSpeed;
+            controller.Speed = controller.WalkSpeed;
         }
     }
 
