@@ -26,10 +26,20 @@ public class DangerZone : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && other.TryGetComponent(out HealthComponent HP))
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        if (other.TryGetComponent(out HealthComponent HP))
         {
             health = HP;
             InZone = true;
+        }
+
+        if(other.TryGetComponent(out PlayerController controller))
+        {
+            controller.Speed = controller.InitialSpeed / 2.0f;
         }
     }
 

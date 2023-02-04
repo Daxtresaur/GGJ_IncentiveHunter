@@ -41,11 +41,15 @@ public class SafeZone : MonoBehaviour
 
         lb = other.GetComponentInChildren<LightBehavior>();
         lb.IncreaseLight();
-        StartCoroutine(DecreaseSafe());
+        //StartCoroutine(DecreaseSafe());
 
         if (other.TryGetComponent(out PlayerController player))
         {
             player.Speed = player.InitialSpeed;
+        }
+        if (other.TryGetComponent(out HealthComponent HP))
+        {
+            HP.Heal();
         }
     }
 
@@ -54,11 +58,12 @@ public class SafeZone : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         if(other.TryGetComponent(out PlayerController player))
         {
-            player.Speed = player.InitialSpeed / 2.0f;
+            player.Speed = player.InitialSpeed;
         }
         lb = null;
     }
 
+#if false
     IEnumerator DecreaseSafe()
     {
         if (isDying) { yield break; }
@@ -78,4 +83,5 @@ public class SafeZone : MonoBehaviour
         isDying = false;
         gameObject.SetActive(false);
     }
+#endif
 }
