@@ -102,8 +102,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
-  offset: {x: 0, y: 0, z: 1}
+  offset: {x: 0, y: 0, z: 2}
   cam: {fileID: 0}
 --- !u!114 &5757422857830210107
 MonoBehaviour:
@@ -164,6 +164,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f200fe18205d55d4d93f4af95d64cee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textMeshProUGUI: {fileID: 5757422857830213062}
+  health: {fileID: 0}
+  startDialogue:
+  - "Where\u2026am I?"
+  - Nowhere.
+  - "You again\u2026"
+  Random1:
+  - One small step at a time.
+  - Hah, you still have a long way to go.
+  Random2:
+  - "I\u2019ll find my way."
+  - "You\u2019re lost."
+  - "No, I\u2019m not."
+  Random3:
+  - "I\u2019m okay."
+  - "You\u2019re not okay."
+  dialogueAt75:
+  - Ugh, stupid plants.
+  - "Hurts, doesn\u2019t it?"
+  - Whatever.
+  dialogueAt50:
+  - "I\u2019m\u2026okay\u2026"
+  - Why keep do you keep fooling yourself?
+  - Shut up!
+  dialogueAt25:
+  - "Mustn\u2019t\u2026stop\u2026here\u2026"
+  - Just lie down
+  afterHiding1:
+  - "You won\u2019t get me that easily."
+  - "Next time\u2026"
+  afterHiding2:
+  - "Stupid monster\u2026"
+  afterHiding3:
+  - "That\u2026was close\u2026"
+  - Too close.
+  closetoEnd:
+  - It was all your fault.
+  - "It wasn\u2019t!"
+  - Your fault.
 --- !u!1 &5757422858441577552
 GameObject:
   m_ObjectHideFlags: 0

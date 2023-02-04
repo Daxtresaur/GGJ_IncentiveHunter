@@ -369,6 +369,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2095856529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3875770516625851645, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+  m_PrefabInstance: {fileID: 3875770516800104262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095856535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095856529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f03348080059fd4fbb9d0b701be1df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startListDialogues: []
 --- !u!1001 &3875770516800104262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,7 +440,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_text
-      value: You are me.
+      value: "I\u2019ve been fighting you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516847459531, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_Pivot.x
@@ -512,5 +546,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryTextCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3875770517509123366, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770517509123366, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770517509123366, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2142073419972464232, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
