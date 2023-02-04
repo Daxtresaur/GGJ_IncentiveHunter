@@ -8,7 +8,7 @@ public class HealthComponent : MonoBehaviour
     public Action<int> OnDamage;
     public Action OnDie;
     [SerializeField] public PostProcessDeathEffect DeathEffect;
-    [SerializeField] private int currentHP;
+    [SerializeField] public int currentHP;
     private int maxHP;
 
     private void Start()
