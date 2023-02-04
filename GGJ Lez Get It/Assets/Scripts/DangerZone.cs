@@ -47,7 +47,7 @@ public class DangerZone : MonoBehaviour
 
         if (other.TryGetComponent(out PlayerController controller))
         {
-            controller.Speed = controller.InitialSpeed / 2.0f;
+            controller.Speed = controller.SlowSpeed;
         }
     }
 
@@ -61,7 +61,7 @@ public class DangerZone : MonoBehaviour
 
         if (other.TryGetComponent(out PlayerController controller))
         {
-            controller.Speed = controller.InitialSpeed;
+            controller.Speed = controller.WalkSpeed;
         }
     }
 

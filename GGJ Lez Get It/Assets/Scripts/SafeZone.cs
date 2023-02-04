@@ -50,6 +50,8 @@ public class SafeZone : MonoBehaviour
             HP.Heal();
         }
 
+        HorrorAmbiance.Instance.CanPlay = false;
+        
         monster.Teleport();
     }
 
@@ -58,6 +60,7 @@ public class SafeZone : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         lb.DecreaseLight();
         lb = null;
+        HorrorAmbiance.Instance.CanPlay = true;
     }
 
 #if false

@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class MonsterBehavior : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioClip[] FoundYouAudio;
+
     //[SerializeField] private float speed;
     [SerializeField] private float patrolSpeed = 1.0f;
     public float PatrolSpeed { get { return patrolSpeed; } }
@@ -129,6 +132,9 @@ public class ChaseState : MonsterStates
     public override void OnStart(MonsterBehavior behavior)
     {
         base.OnStart(behavior);
+        AudioClip[] clips = behavior.FoundYouAudio;
+        int RandomRange = Random.Range(0, clips.Length);
+        SoundManager.instance.PlaySFX(clips[RandomRange]);
         behavior.Agent.speed = behavior.ChaseSpeed;
     }
 
