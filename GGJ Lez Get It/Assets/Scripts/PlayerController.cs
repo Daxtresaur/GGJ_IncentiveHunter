@@ -6,7 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float initialSpeed = 3.0f;
-    public float InitialSpeed { get { return initialSpeed; } }
+	[SerializeField] private float lighterFuel = 100.0f;
+
+	[SerializeField] private bool lighterOn = true;
+
+	[SerializeField] private GameObject lighter;
+	public float InitialSpeed { get { return initialSpeed; } }
     public float Speed;
 
     private Vector2 direction;
@@ -87,9 +92,37 @@ public class PlayerController : MonoBehaviour
         direction3D.z = direction.y;
 
         transform.position += Speed * Time.fixedDeltaTime * direction3D;
+
+	}
+	public void UseLighter()
+    {
+        lighter.SetActive(true);
+        lighterOn = true;
     }
 
-    public void SelfDestruct()
+	public void HideLighter()
+	{
+		lighter.SetActive(false);
+		lighterOn = false;
+
+	}
+    public void FuelBurner()
+    {
+        if (lighterOn && lighterFuel > 0)
+        {
+			lighterFuel -= 5 * Time.fixedDeltaTime;
+		}
+        else if (lighterFuel <= 0)
+        {
+			Debug.Log("lighter is false");
+
+			lighter.SetActive(false);
+        }
+		Debug.Log(lighterFuel);
+	}
+
+
+	public void SelfDestruct()
     {
         Camera.main.transform.SetParent(null);
         Destroy(gameObject);
@@ -127,7 +160,10 @@ public class PlayerAliveState : PlayerState
     {
         base.OnFixedUpdate(controller);
         controller.MovePlayer();
-    }
+        controller.FuelBurner();
+		//Debug.Log(lighter)
+
+	}
 }
 
 public class PlayerDeadState : PlayerState
