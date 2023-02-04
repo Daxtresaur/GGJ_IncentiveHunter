@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageRate: 0.25
+  damageRate: 0.05
 --- !u!1 &427069491
 GameObject:
   m_ObjectHideFlags: 0

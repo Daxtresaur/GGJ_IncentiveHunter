@@ -5,7 +5,7 @@ using UnityEngine;
 public class DangerZone : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
-    [SerializeField] private float damageRate = 1.0f;
+    [SerializeField] private float damageRate = 0.1f;
     private bool inZone;
     private HealthComponent health;
     public bool InZone
