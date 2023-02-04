@@ -64,6 +64,7 @@ public class SafeZone : MonoBehaviour
         {
             player.Speed = player.InitialSpeed;
         }
+        lb.DecreaseLight();
         lb = null;
     }
 

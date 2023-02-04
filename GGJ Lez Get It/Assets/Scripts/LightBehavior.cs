@@ -6,8 +6,11 @@ public class LightBehavior : MonoBehaviour
 {
     public float shrinkRate;
     public float maxAngle = 50.0f;
+    public float biggerAngle = 150.0f;
     private Light slight;
     private bool isRunning = false;
+
+    private float targetSize;
     public bool LightIsGone
     {
         get
@@ -20,28 +23,36 @@ public class LightBehavior : MonoBehaviour
     {
         slight = GetComponent<Light>();
         slight.spotAngle = maxAngle;
+        targetSize = maxAngle;
     }
 
     public void FixedUpdate()
     {
-        DecreaseLight();
+        //DecreaseLight();
+        slight.spotAngle = Mathf.Lerp(slight.spotAngle, targetSize, Time.deltaTime);
     }
 
     public void DecreaseLight()
     {
-        slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
-        slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
+        //slight.spotAngle = maxAngle;
+        targetSize = maxAngle;
+        //slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
+        //slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
     }
 
     public void KillLight()
     {
-        slight.spotAngle = 0.0f;
+        //slight.spotAngle = 0.0f;
+        targetSize = 0.0f;
+        //slight.spotAngle = 0.0f;
     }
 
     public void IncreaseLight()
     {
-        if (isRunning) return;
-        StartCoroutine(GrowLight());
+        //slight.spotAngle = maxAngle * 2.0f;
+        targetSize = biggerAngle;
+        //if (isRunning) return;
+        //StartCoroutine(GrowLight());
     }
 
     IEnumerator GrowLight()

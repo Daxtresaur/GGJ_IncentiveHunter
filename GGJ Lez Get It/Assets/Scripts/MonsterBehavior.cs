@@ -82,7 +82,16 @@ public class MonsterBehavior : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         LightBehavior lb = other.GetComponentInChildren<LightBehavior>();
-        lb.KillLight();
+        //lb.KillLight();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (other.TryGetComponent(out HealthComponent HP))
+        {
+            HP.Damage(1);
+        }
     }
 }
 
@@ -141,6 +150,8 @@ public class ChaseState : MonsterStates
             behavior.SetState(behavior.PatrolState); 
             yield break;
         }
+
+        if (behavior.FOV.visibleTargets[0] == null) yield break;
         behavior.Agent.SetDestination(behavior.FOV.visibleTargets[0].position);
     }
 }

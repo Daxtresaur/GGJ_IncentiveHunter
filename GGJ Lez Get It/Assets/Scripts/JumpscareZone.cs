@@ -23,12 +23,12 @@ public class JumpscareZone : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log("Timer" + timer);
+        //Debug.Log("Timer" + timer);
 
         if (timer >= 3.0f && timer < 4.0f)
         {
             collider.enabled = true;
-            Debug.Log(1);
+            //Debug.Log(1);
         }
         else if (timer >= 4.0f && timer <= 6.0f)
         {
@@ -38,18 +38,18 @@ public class JumpscareZone : MonoBehaviour
                 {
                     health.Damage(damage);
                     damageActive = false;
-                    Debug.Log("damage");
+                    //Debug.Log("damage");
                 }
 
             }
-            Debug.Log(2);
+            //Debug.Log(2);
         }
         else if (timer > 6)
         {
             timer = 0.0f;
             collider.enabled = false;
             damageActive = true;
-            Debug.Log(3);
+            //Debug.Log(3);
         }
 
     }

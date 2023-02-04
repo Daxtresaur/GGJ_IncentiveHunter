@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkRate: 1
-  maxAngle: 50
+  maxAngle: 40
+  biggerAngle: 150
 --- !u!1 &6715880195880643400
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 6715880195987587436}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -389,7 +390,7 @@ GameObject:
   - component: {fileID: 6715880196296202690}
   - component: {fileID: 6715880196296202691}
   - component: {fileID: 6715880196296202700}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -460,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550fab0a4f9b6e74f98e4911f7edb1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathEffect: {fileID: 0}
+  DeathEffect: {fileID: 7422386508172291943}
   currentHP: 10
 --- !u!114 &6715880196296202690
 MonoBehaviour:
