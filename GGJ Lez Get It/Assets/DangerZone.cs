@@ -46,7 +46,7 @@ public class DangerZone : MonoBehaviour
     {
         //if (inZone) yield break;
         float timer = 0.0f;
-        while (inZone)
+        while (inZone && health != null)
         {
             if(timer >= damageRate)
             {

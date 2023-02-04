@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float initialSpeed = 3.0f;
+    public float InitialSpeed { get { return initialSpeed; } }
+    public float Speed;
 
     private Vector2 direction;
     private Rigidbody rb;
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         HP = GetComponent<HealthComponent>();
+
+        Speed = initialSpeed;
     }
 
     private void Start()
@@ -64,7 +68,7 @@ public class PlayerController : MonoBehaviour
         direction3D.y = 0.0f;
         direction3D.z = direction.y;
 
-        rb.MovePosition(speed * Time.fixedDeltaTime * direction3D + rb.position);
+        rb.MovePosition(Speed * Time.fixedDeltaTime * direction3D + rb.position);
     }
 
     public void SelfDestruct()
