@@ -22,22 +22,22 @@ public class LightBehavior : MonoBehaviour
     void Start()
     {
         slight = GetComponent<Light>();
-        slight.spotAngle = maxAngle;
-        targetSize = maxAngle;
+        //slight.spotAngle = maxAngle;
+        //targetSize = maxAngle;
     }
 
     public void FixedUpdate()
     {
-        //DecreaseLight();
-        slight.spotAngle = Mathf.Lerp(slight.spotAngle, targetSize, Time.deltaTime);
+        DecreaseLight();
+        //slight.spotAngle = Mathf.Lerp(slight.spotAngle, targetSize, Time.deltaTime);
     }
 
     public void DecreaseLight()
     {
         //slight.spotAngle = maxAngle;
-        targetSize = maxAngle;
-        //slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
-        //slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
+        //targetSize = maxAngle;
+        slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
+        slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
     }
 
     public void KillLight()
@@ -50,9 +50,9 @@ public class LightBehavior : MonoBehaviour
     public void IncreaseLight()
     {
         //slight.spotAngle = maxAngle * 2.0f;
-        targetSize = biggerAngle;
-        //if (isRunning) return;
-        //StartCoroutine(GrowLight());
+        //targetSize = biggerAngle;
+        if (isRunning) return;
+        StartCoroutine(GrowLight());
     }
 
     IEnumerator GrowLight()

@@ -41,6 +41,7 @@ public class MonsterBehavior : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         FOV = GetComponentInChildren<FieldOfView>();
         SetState(PatrolState);
+        Teleport();
     }
 
     // Update is called once per frame
