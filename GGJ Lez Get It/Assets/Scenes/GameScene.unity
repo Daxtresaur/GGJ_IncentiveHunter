@@ -3467,6 +3467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionTime: 3
+  playerPos: {fileID: 1462488528}
 --- !u!114 &621231201
 MonoBehaviour:
   m_ObjectHideFlags: 0

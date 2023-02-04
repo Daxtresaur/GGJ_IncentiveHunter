@@ -44,15 +44,15 @@ public class LittleGirlDialogue : MonoBehaviour
         //Random.Range(1, 3);
         timer += Time.deltaTime;
 
-        if (health.currentHP >= -25)
+        if (health.currentHP == -25)
         {
             showDialogueSet(dialogueAt75);
         }
-        else if (health.currentHP >= -50)
+        else if (health.currentHP == -50)
         {
             showDialogueSet(dialogueAt50);
         }
-        else if (health.currentHP >= -75)
+        else if (health.currentHP == -75)
         {
             showDialogueSet(dialogueAt25);
         }
