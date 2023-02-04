@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightBehavior : MonoBehaviour
 {
-
+    public float shrinkRate;
     public Light slight;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,6 @@ public class LightBehavior : MonoBehaviour
     void Update()
     {
 
-        slight.range = 45;
+        slight.spotAngle -= Time.deltaTime * shrinkRate;
     }
 }
