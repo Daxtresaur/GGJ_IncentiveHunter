@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550fab0a4f9b6e74f98e4911f7edb1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartBeat: {fileID: 8300000, guid: 6e0fbdde84d65d24facc56dc23c3471b, type: 3}
   DeathEffect: {fileID: 7422386508172291943}
   currentHP: 10
 --- !u!114 &6715880196296202690
