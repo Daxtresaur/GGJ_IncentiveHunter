@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class blackout : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class blackout : MonoBehaviour
 
 			yield return null;
 		}
+		//lipat scene
+		SceneManager.LoadScene(sceneName: "PreStartScene");
 
 	}
 
