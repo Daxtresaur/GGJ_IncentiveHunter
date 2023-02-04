@@ -33,6 +33,11 @@ public class LightBehavior : MonoBehaviour
         slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
     }
 
+    public void KillLight()
+    {
+        slight.spotAngle = 0.0f;
+    }
+
     public void IncreaseLight()
     {
         if (isRunning) return;

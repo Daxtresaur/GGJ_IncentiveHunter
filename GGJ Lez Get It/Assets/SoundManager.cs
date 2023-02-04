@@ -11,8 +11,8 @@ public class SoundManager : MonoBehaviour
 
     AudioMixer mixer;
 
-    public void PlayAudio()
+    public void PlaySFX(AudioClip clip)
     {
-
+        SFX.PlayOneShot(clip);
     }
 }
