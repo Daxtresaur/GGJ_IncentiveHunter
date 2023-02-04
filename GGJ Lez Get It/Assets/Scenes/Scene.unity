@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  damageRate: 1
+  damageRate: 0.05
 --- !u!1 &324595904
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd9912de3e200f4083dd48a4f5f1a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 0}
   shrinkRate: 2
 --- !u!108 &427069494
 Light:
@@ -817,6 +818,8 @@ GameObject:
   - component: {fileID: 554465720}
   - component: {fileID: 554465719}
   - component: {fileID: 554465718}
+  - component: {fileID: 554465721}
+  - component: {fileID: 554465722}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -890,6 +893,41 @@ Transform:
   m_Father: {fileID: 1421304083}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &554465721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554465717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c496d7db5df144286ef6d5f7e9d766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 554465722}
+  bloom: 10
+  saturation: 10
+  bloomLayer: {fileID: 0}
+  ambientOcclusionLayer: {fileID: 0}
+  colorGradingLayer: {fileID: 0}
+--- !u!114 &554465722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554465717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 71593e3f82bc3e047aeffcaed6c6e1e5, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &568726073
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &610414730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1472,6 +1510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd9912de3e200f4083dd48a4f5f1a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 0}
   shrinkRate: 2
 --- !u!108 &1284035815
 Light:
@@ -1692,6 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550fab0a4f9b6e74f98e4911f7edb1e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathEffect: {fileID: 554465721}
   currentHP: 10
 --- !u!1 &1423169595
 GameObject:
