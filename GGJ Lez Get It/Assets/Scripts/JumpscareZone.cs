@@ -13,10 +13,13 @@ public class JumpscareZone : MonoBehaviour
     private bool damageActive = true;
     float timer = 0;
 
+    private Animator _animator;
+
     void Start()
     {
         collider = gameObject.GetComponent<SphereCollider>();
         collider.enabled = false;
+        _animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -24,28 +27,36 @@ public class JumpscareZone : MonoBehaviour
     {
         timer += Time.deltaTime;
         //Debug.Log("Timer" + timer);
-
-        if (timer >= 3.0f && timer < 4.0f)
+        
+        if (timer >= 3.0f && timer < 5.0f)
         {
             collider.enabled = true;
-            //Debug.Log(1);
+            _animator.Play("RootGrow");
         }
-        else if (timer >= 4.0f && timer <= 6.0f)
+        else if (timer< 3.0f)
         {
+            _animator.Play("RootIdle");
+        }
+        else if (timer >= 4.0f && timer <= 7.0f)
+        {
+            _animator.Play("RootIdleGrown");
             if (inZone && health != null)
             {
                 if (damageActive)
                 {
+                    //_animator.CrossFade("RootAttack", 0.5f);
                     health.Damage(damage);
                     damageActive = false;
+                    _animator.Play("RootAttack");
                     //Debug.Log("damage");
                 }
 
             }
             //Debug.Log(2);
         }
-        else if (timer > 6)
+        else if (timer > 9.0f)
         {
+            _animator.Play("RootUngrow");
             timer = 0.0f;
             collider.enabled = false;
             damageActive = true;
