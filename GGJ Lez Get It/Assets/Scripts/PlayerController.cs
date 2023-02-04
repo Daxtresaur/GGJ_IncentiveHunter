@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public enum MovementStates
 {
@@ -22,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float RunSpeed { get { return runSpeed; } }
     public float SlowSpeed { get { return walkSpeed / 2.0f; } }
     public float Speed;
+
+    [SerializeField] public List<Transform> SpawnPoints;
 
     private Vector2 direction;
     //private Rigidbody rb;
@@ -62,6 +68,11 @@ public class PlayerController : MonoBehaviour
         HP = GetComponent<HealthComponent>();
         animator = GetComponentInChildren<Animator>();
         Speed = WalkSpeed;
+
+        int index = Random.Range(0, 7);
+
+        transform.position = SpawnPoints[index].position;
+        transform.position += new Vector3(0, -0.5f, 0);
     }
 
     private void Start()
@@ -165,6 +176,7 @@ public class PlayerController : MonoBehaviour
     {
         Camera.main.transform.SetParent(null);
         Destroy(gameObject);
+        SceneManager.LoadScene("GameScene");
     }
     #endregion
 

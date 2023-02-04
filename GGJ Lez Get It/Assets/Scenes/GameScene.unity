@@ -8168,6 +8168,42 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 776508448}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 173120014}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1337897377}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1415509714}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 1476302949}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 627841235}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[6]
+      value: 
+      objectReference: {fileID: 1430902349}
+    - target: {fileID: 6715880196296202690, guid: af52984a20dca1d439acc0e729269024, type: 3}
+      propertyPath: SpawnPoints.Array.data[7]
+      value: 
+      objectReference: {fileID: 2128588686}
     - target: {fileID: 6715880196296202693, guid: af52984a20dca1d439acc0e729269024, type: 3}
       propertyPath: m_Name
       value: Player
