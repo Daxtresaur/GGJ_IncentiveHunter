@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
         HP = GetComponent<HealthComponent>();
     }
 
+    private void Start()
+    {
+        SetState(AliveState);
+    }
+
     public void OnMove(InputValue value)
     {
         direction = value.Get<Vector2>().normalized;
@@ -44,11 +49,11 @@ public class PlayerController : MonoBehaviour
     #region Updates
     public void Update()
     {
-        currentState.OnUpdate(this);
+        currentState?.OnUpdate(this);
     }
     private void FixedUpdate()
     {
-        currentState.OnFixedUpdate(this);
+        currentState?.OnFixedUpdate(this);
     }
     #endregion
 
@@ -60,6 +65,12 @@ public class PlayerController : MonoBehaviour
         direction3D.z = direction.y;
 
         rb.MovePosition(speed * Time.fixedDeltaTime * direction3D + rb.position);
+    }
+
+    public void SelfDestruct()
+    {
+        Camera.main.transform.SetParent(null);
+        Destroy(gameObject);
     }
     #endregion
 
@@ -101,7 +112,7 @@ public class PlayerDeadState : PlayerState
 {
     public override void OnStart(PlayerController controller)
     {
-        
+        controller.SelfDestruct();
     }
 }
 

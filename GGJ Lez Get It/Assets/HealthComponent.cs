@@ -7,7 +7,7 @@ public class HealthComponent : MonoBehaviour
 {
     public Action<int> OnDamage;
     public Action OnDie;
-    private int currentHP;
+    [SerializeField] private int currentHP;
     //private int maxHP;
 
     public void Damage(int damage)
@@ -24,7 +24,7 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    public void Die()
+    private void Die()
     {
         OnDie.Invoke();
     }
