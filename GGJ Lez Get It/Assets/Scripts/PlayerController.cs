@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     public Action<MovementStates> OnPlayerMove;
     [SerializeField] private float walkSpeed = 3.0f;
-    [SerializeField] private float runSpeed = 3.0f;
+    [SerializeField] private float runSpeed = 5.0f;
     [SerializeField] private float lighterFuel = 100.0f;
 
 	[SerializeField] private bool lighterOn = true;
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnRun(InputValue value)
     {
+        Debug.Log("Running");
         if(value.isPressed)
             Speed = RunSpeed;
         else
@@ -139,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
 			lighter.SetActive(false);
         }
-		Debug.Log(lighterFuel);
+		//Debug.Log(lighterFuel);
 	}
 
 

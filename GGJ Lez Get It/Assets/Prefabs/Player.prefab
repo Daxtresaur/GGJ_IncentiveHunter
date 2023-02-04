@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkRate: 1
-  maxAngle: 50
+  maxAngle: 100
   biggerAngle: 150
 --- !u!1 &6715880195880643400
 GameObject:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  runSpeed: 3
+  runSpeed: 5
   lighterFuel: 100
   lighterOn: 1
   lighter: {fileID: 2523063661768803181}
