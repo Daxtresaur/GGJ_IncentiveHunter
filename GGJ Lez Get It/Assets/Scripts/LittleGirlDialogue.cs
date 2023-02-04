@@ -39,20 +39,20 @@ public class LittleGirlDialogue : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Random.Range(1, 3);
         timer += Time.deltaTime;
 
-        if (health.currentHP == -25)
+        if (health.currentHP >= -25)
         {
             showDialogueSet(dialogueAt75);
         }
-        else if (health.currentHP == -50)
+        else if (health.currentHP >= -50)
         {
             showDialogueSet(dialogueAt50);
         }
-        else if (health.currentHP == -75)
+        else if (health.currentHP >= -75)
         {
             showDialogueSet(dialogueAt25);
         }
@@ -108,6 +108,7 @@ public class LittleGirlDialogue : MonoBehaviour
             else
             {
                 StartCoroutine(WaitLastText(stringList, stringList[index-1]));
+                
             }
 
         }

@@ -8364,6 +8364,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1736.5177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 213.777
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.7341
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.2409
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3875770516847459531, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8654,7 +8686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

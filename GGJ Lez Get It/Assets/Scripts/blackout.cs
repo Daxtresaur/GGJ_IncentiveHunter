@@ -85,4 +85,10 @@ public class blackout : MonoBehaviour
 
 	}
 
+    public void ExitGame()
+    {
+		Application.Quit();
+		Debug.Log("Quit Game");
+    }
+
 }
