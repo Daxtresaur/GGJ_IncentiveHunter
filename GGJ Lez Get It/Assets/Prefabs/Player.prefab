@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkRate: 1
-  maxAngle: 40
+  maxAngle: 50
   biggerAngle: 150
 --- !u!1 &6715880195880643400
 GameObject:
@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 6715880196296202690}
   - component: {fileID: 6715880196296202691}
   - component: {fileID: 6715880196296202700}
+  - component: {fileID: 237883606428882950}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -506,3 +507,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: -0.05, z: -0.32}
+--- !u!114 &237883606428882950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715880196296202693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cffd0cee011fd46988294433e5c9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lureAmount: 3
+  lurePrefab: {fileID: 5045645028642672898, guid: 98a8c85e2d4a07e42bb487c5da7f57f9, type: 3}

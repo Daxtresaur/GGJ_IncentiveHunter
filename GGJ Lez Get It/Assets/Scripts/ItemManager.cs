@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class ItemManager : MonoBehaviour
 {
     [SerializeField] private int lureAmount;
+    public int LureAmount { get { return lureAmount; } }
+
     [SerializeField] private GameObject lurePrefab;
 
     public void OnThrow()
