@@ -45,27 +45,22 @@ public class SafeZone : MonoBehaviour
         lb.IncreaseLight();
         //StartCoroutine(DecreaseSafe());
 
-        if (other.TryGetComponent(out PlayerController player))
-        {
-            player.Speed = player.InitialSpeed;
-        }
         if (other.TryGetComponent(out HealthComponent HP))
         {
             HP.Heal();
         }
 
+        HorrorAmbiance.Instance.CanPlay = false;
+        
         monster.Teleport();
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if(other.TryGetComponent(out PlayerController player))
-        {
-            player.Speed = player.InitialSpeed;
-        }
         lb.DecreaseLight();
         lb = null;
+        HorrorAmbiance.Instance.CanPlay = true;
     }
 
 #if false

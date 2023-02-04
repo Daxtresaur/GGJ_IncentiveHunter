@@ -76,7 +76,7 @@ public class JumpscareZone : MonoBehaviour
 
         if (other.TryGetComponent(out PlayerController controller))
         {
-            controller.Speed = controller.InitialSpeed / 2.0f;
+            controller.Speed = controller.SlowSpeed;
         }
     }
 
