@@ -7,8 +7,8 @@ public class SafeZone : MonoBehaviour
     //private bool inZone;
     public MonsterBehavior monster;
     public float shrinkRate = 2.0f;
-    private Light sLight;
-    private SphereCollider col;
+    //private Light sLight;
+    //private SphereCollider col;
     private LightBehavior lb;
     private bool isDying = false;
 #if false

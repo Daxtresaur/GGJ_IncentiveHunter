@@ -72,9 +72,9 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Running");
         if(value.isPressed)
-            Speed = RunSpeed;
+            Speed = runSpeed;
         else
-            Speed = WalkSpeed;
+            Speed = walkSpeed;
     }
 
     public void OnMove(InputValue value)
