@@ -5,6 +5,7 @@ using UnityEngine;
 public class SafeZone : MonoBehaviour
 {
     //private bool inZone;
+    public MonsterBehavior monster;
     public float shrinkRate = 2.0f;
     //private Light sLight;
     //private SphereCollider col;
@@ -32,6 +33,7 @@ public class SafeZone : MonoBehaviour
 
     private void Awake()
     {
+        monster = FindObjectOfType<MonsterBehavior>();
         //sLight = GetComponent<Light>();
         //col = GetComponent<SphereCollider>();
     }
@@ -51,6 +53,8 @@ public class SafeZone : MonoBehaviour
         {
             HP.Heal();
         }
+
+        monster.Teleport();
     }
 
     private void OnTriggerExit(Collider other)

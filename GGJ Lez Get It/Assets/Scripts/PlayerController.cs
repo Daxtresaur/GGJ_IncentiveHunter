@@ -32,8 +32,18 @@ public class PlayerController : MonoBehaviour
         //Set initial state
         currentState.OnStart(this);
     }
+
+    public static PlayerController instance;
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         //rb = GetComponent<Rigidbody>();
         HP = GetComponent<HealthComponent>();
 

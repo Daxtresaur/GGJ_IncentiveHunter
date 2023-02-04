@@ -6,17 +6,23 @@ using UnityEngine.AI;
 public class MonsterBehavior : MonoBehaviour
 {
     //[SerializeField] private float speed;
+    [SerializeField] private float patrolSpeed = 1.0f;
+    public float PatrolSpeed { get { return patrolSpeed; } }
+    
+    [SerializeField] private float chaseSpeed = 3.0f;
+    public float ChaseSpeed { get { return chaseSpeed; } }
     [SerializeField] private Transform[] patrolPoints;
     private int index = 0;
-    public NavMeshAgent agent { get; private set; }
-    public Transform target; // get player position
+    public NavMeshAgent Agent { get; private set; }
+    public Transform Target; // get player position
     public FieldOfView FOV { get; private set; }
 
     MonsterStates currentState;
-    public PatrolState PatrolState { get; private set; }
-    public ChaseState ChaseState { get; private set; }
+    public PatrolState PatrolState { get; private set; } = new();
+    public ChaseState ChaseState { get; private set; } = new();
     public void SetState(MonsterStates state)
     {
+        Debug.Log(state);
         if (state == currentState) return;
 
         //Do all exit actions
@@ -30,8 +36,9 @@ public class MonsterBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        Agent = GetComponent<NavMeshAgent>();
         FOV = GetComponentInChildren<FieldOfView>();
+        SetState(PatrolState);
     }
 
     // Update is called once per frame
@@ -42,9 +49,32 @@ public class MonsterBehavior : MonoBehaviour
 
     public void Patrol()
     {
-        if(agent.pathStatus == NavMeshPathStatus.PathComplete) index++;
-        if (index <= patrolPoints.Length) index = 0;
-        agent.SetDestination(patrolPoints[index].position);
+        //Debug.Log(Agent.remainingDistance);
+        if(Agent.remainingDistance <= 0.2f) index++;
+        if (index >= patrolPoints.Length) index = 0;
+        StartCoroutine(Move(patrolPoints[index].position));
+    }
+
+    public void Teleport()
+    {
+        Vector3 playerPos = PlayerController.instance.transform.position;
+        int tIndex = 0;
+        float distance = Vector3.Distance(playerPos, patrolPoints[0].position);
+        for(int i = 1; i < patrolPoints.Length; i++)
+        {
+
+            Vector3 patrolPos = patrolPoints[i].position;
+            float tempDistance = Vector3.Distance(playerPos, patrolPoints[i].position);
+            if (distance < tempDistance) { tIndex = i; }
+        }
+
+        transform.position = patrolPoints[tIndex].position;
+    }
+
+    IEnumerator Move(Vector3 pos)
+    {
+        yield return null;
+        Agent.SetDestination(pos);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -66,34 +96,51 @@ public class MonsterStates
 
 public class PatrolState : MonsterStates
 {
+    public override void OnStart(MonsterBehavior behavior)
+    {
+        base.OnStart(behavior);
+        behavior.Agent.speed = behavior.PatrolSpeed;
+    }
     public override void OnUpdate(MonsterBehavior behavior)
     {
         base.OnUpdate(behavior);
         behavior.Patrol();
-
-    }
-    public override void OnLateUpdate(MonsterBehavior behavior)
-    {
         if (behavior.FOV.visibleTargets.Count <= 0) return;
 
-        behavior.SetState(behavior.PatrolState);
+        behavior.SetState(behavior.ChaseState);
+
     }
 }
 
 public class ChaseState : MonsterStates 
 {
+    public override void OnStart(MonsterBehavior behavior)
+    {
+        base.OnStart(behavior);
+        behavior.Agent.speed = behavior.ChaseSpeed;
+    }
+
     public override void OnUpdate(MonsterBehavior behavior)
     {
-        base.OnLateUpdate(behavior);
+        base.OnUpdate(behavior);
         //Set to patrol
-        if (behavior.FOV.visibleTargets.Count <= 0) behavior.SetState(behavior.PatrolState);
-
         behavior.StartCoroutine(FindTarget(behavior));
+    }
+
+    public override void OnExit(MonsterBehavior behavior)
+    {
+        base.OnExit(behavior);
+        //behavior.Teleport();
     }
 
     IEnumerator FindTarget(MonsterBehavior behavior)
     {
         yield return null;
-        behavior.agent.SetDestination(behavior.FOV.visibleTargets[0].position);
+        if (behavior.FOV.visibleTargets.Count <= 0) 
+        { 
+            behavior.SetState(behavior.PatrolState); 
+            yield break;
+        }
+        behavior.Agent.SetDestination(behavior.FOV.visibleTargets[0].position);
     }
 }
