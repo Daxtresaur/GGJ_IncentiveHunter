@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
+    public AudioClip heartBeat;
     public Action<int> OnDamage;
     public Action OnDie;
     [SerializeField] public PostProcessDeathEffect DeathEffect;
@@ -16,6 +17,13 @@ public class HealthComponent : MonoBehaviour
         maxHP = currentHP;
     }
 
+    public void Update()
+    {
+        if(currentHP <= -70)
+        {
+            SoundManager.instance.PlayAmbience(heartBeat, false);
+        }
+    }
     public void Heal()
     {
         currentHP = maxHP;
@@ -45,7 +53,7 @@ public class HealthComponent : MonoBehaviour
 
     private void AdjustGrayScale(float value)
     {
-        Debug.Log(DeathEffect.colorGradingLayer.saturation.value);
+        //Debug.Log(DeathEffect.colorGradingLayer.saturation.value);
         DeathEffect.colorGradingLayer.saturation.value = value;
     }
 }
