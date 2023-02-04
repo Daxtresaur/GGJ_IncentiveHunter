@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static Unity.VisualScripting.Member;
 
 public class MonsterBehavior : MonoBehaviour
 {
     [Header("Audio")]
+    public AudioSource source;
     public AudioClip[] FoundYouAudio;
 
     //[SerializeField] private float speed;
@@ -41,6 +43,7 @@ public class MonsterBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         Agent = GetComponent<NavMeshAgent>();
         FOV = GetComponentInChildren<FieldOfView>();
         SetState(PatrolState);
@@ -114,6 +117,7 @@ public class PatrolState : MonsterStates
     public override void OnStart(MonsterBehavior behavior)
     {
         base.OnStart(behavior);
+        behavior.source.volume = 1.0f;
         behavior.Agent.speed = behavior.PatrolSpeed;
     }
     public override void OnUpdate(MonsterBehavior behavior)
@@ -132,6 +136,7 @@ public class ChaseState : MonsterStates
     public override void OnStart(MonsterBehavior behavior)
     {
         base.OnStart(behavior);
+        behavior.source.volume = 0.5f;
         AudioClip[] clips = behavior.FoundYouAudio;
         int RandomRange = Random.Range(0, clips.Length);
         SoundManager.instance.PlaySFX(clips[RandomRange]);

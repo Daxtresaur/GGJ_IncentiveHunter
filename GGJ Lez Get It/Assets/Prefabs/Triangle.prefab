@@ -112,6 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5a39988c9f8bc47a83a22b9a9444b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 285ca9091467f0a43986881b9be93411, type: 3}
+  clip: {fileID: 8300000, guid: c07b933e84b7c594692335ee9373a02a, type: 3}
   playOnEnter: 1
   playOnExit: 1

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37198e1024176a04e9a04d669671c88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 6.13
+  viewRadius: 10
   viewAngle: 360
   targetMask:
     serializedVersion: 2
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ea72e6ec3eaa343a92f6210a6519d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
   FoundYouAudio:
   - {fileID: 8300000, guid: ceafb4f5ca2e1ab4e9f067e76f316559, type: 3}
   - {fileID: 8300000, guid: cf167367e0afb224b9d85ffb40bc18d1, type: 3}
