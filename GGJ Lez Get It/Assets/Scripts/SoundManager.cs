@@ -15,4 +15,18 @@ public class SoundManager : MonoBehaviour
     {
         SFX.PlayOneShot(clip);
     }
+
+    public void PlayAmbience(AudioClip clip, bool looping = true)
+    {
+        Ambience.clip = clip;
+        Ambience.loop = looping;
+        Ambience.Play();
+    }
+
+    public void PlayMusic(AudioClip clip, bool looping = true)
+    {
+        Ambience.clip = clip;
+        Ambience.loop = looping;
+        Ambience.Play();
+    }
 }

@@ -17,9 +17,11 @@ public class MonsterBehavior : MonoBehaviour
     public Transform Target; // get player position
     public FieldOfView FOV { get; private set; }
 
+    #region State
     MonsterStates currentState;
     public PatrolState PatrolState { get; private set; } = new();
     public ChaseState ChaseState { get; private set; } = new();
+    #endregion
     public void SetState(MonsterStates state)
     {
         Debug.Log(state);
@@ -39,6 +41,7 @@ public class MonsterBehavior : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>();
         FOV = GetComponentInChildren<FieldOfView>();
         SetState(PatrolState);
+        Teleport();
     }
 
     // Update is called once per frame
@@ -50,7 +53,7 @@ public class MonsterBehavior : MonoBehaviour
     public void Patrol()
     {
         //Debug.Log(Agent.remainingDistance);
-        if(Agent.remainingDistance <= 0.2f) index++;
+        if (Agent.remainingDistance <= 0.2f) { index = Random.Range(0, patrolPoints.Length); };
         if (index >= patrolPoints.Length) index = 0;
         StartCoroutine(Move(patrolPoints[index].position));
     }
@@ -82,7 +85,16 @@ public class MonsterBehavior : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         LightBehavior lb = other.GetComponentInChildren<LightBehavior>();
-        lb.KillLight();
+        //lb.KillLight();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (other.TryGetComponent(out HealthComponent HP))
+        {
+            HP.Damage(1);
+        }
     }
 }
 
@@ -141,6 +153,8 @@ public class ChaseState : MonsterStates
             behavior.SetState(behavior.PatrolState); 
             yield break;
         }
+
+        if (behavior.FOV.visibleTargets[0] == null) yield break;
         behavior.Agent.SetDestination(behavior.FOV.visibleTargets[0].position);
     }
 }

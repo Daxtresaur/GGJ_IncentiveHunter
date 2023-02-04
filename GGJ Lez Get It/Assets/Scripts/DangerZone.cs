@@ -50,6 +50,11 @@ public class DangerZone : MonoBehaviour
             health = null;
             InZone = false;
         }
+
+        if (other.TryGetComponent(out PlayerController controller))
+        {
+            controller.Speed = controller.InitialSpeed;
+        }
     }
 
     IEnumerator DamageOverTime()

@@ -34,8 +34,8 @@ public class SafeZone : MonoBehaviour
     private void Awake()
     {
         monster = FindObjectOfType<MonsterBehavior>();
-        //sLight = GetComponent<Light>();
-        //col = GetComponent<SphereCollider>();
+        sLight = GetComponent<Light>();
+        col = GetComponent<SphereCollider>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -64,6 +64,7 @@ public class SafeZone : MonoBehaviour
         {
             player.Speed = player.InitialSpeed;
         }
+        lb.DecreaseLight();
         lb = null;
     }
 

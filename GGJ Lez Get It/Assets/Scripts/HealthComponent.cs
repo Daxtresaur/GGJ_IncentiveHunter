@@ -45,6 +45,7 @@ public class HealthComponent : MonoBehaviour
 
     private void AdjustGrayScale(float value)
     {
+        Debug.Log(DeathEffect.colorGradingLayer.saturation.value);
         DeathEffect.colorGradingLayer.saturation.value = value;
     }
 }
