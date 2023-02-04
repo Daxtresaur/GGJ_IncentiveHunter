@@ -17,9 +17,11 @@ public class MonsterBehavior : MonoBehaviour
     public Transform Target; // get player position
     public FieldOfView FOV { get; private set; }
 
+    #region State
     MonsterStates currentState;
     public PatrolState PatrolState { get; private set; } = new();
     public ChaseState ChaseState { get; private set; } = new();
+    #endregion
     public void SetState(MonsterStates state)
     {
         Debug.Log(state);
@@ -50,7 +52,7 @@ public class MonsterBehavior : MonoBehaviour
     public void Patrol()
     {
         //Debug.Log(Agent.remainingDistance);
-        if(Agent.remainingDistance <= 0.2f) index++;
+        if (Agent.remainingDistance <= 0.2f) { index = Random.Range(0, patrolPoints.Length); };
         if (index >= patrolPoints.Length) index = 0;
         StartCoroutine(Move(patrolPoints[index].position));
     }
