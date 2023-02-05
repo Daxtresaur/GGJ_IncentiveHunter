@@ -17,6 +17,7 @@ public class LittleGirlDialogue : MonoBehaviour
     [SerializeField] private List<string> Random3;
 
     [SerializeField] private List<string> dialogueAt75;
+    [SerializeField] private bool dialogueAt76bool = true;
     [SerializeField] private List<string> dialogueAt50;
     [SerializeField] private List<string> dialogueAt25;
 
@@ -44,9 +45,10 @@ public class LittleGirlDialogue : MonoBehaviour
         //Random.Range(1, 3);
         timer += Time.deltaTime;
 
-        if (health.currentHP == -25)
+        if (health.currentHP <= -25 && dialogueAt76bool)
         {
             showDialogueSet(dialogueAt75);
+            dialogueAt76bool = false;
         }
         else if (health.currentHP == -50)
         {
@@ -74,18 +76,12 @@ public class LittleGirlDialogue : MonoBehaviour
 
     public void showDialogueSet(List<string> stringList)
     {
-        stringList.TrimExcess();
+        //stringList.TrimExcess();
         if (stringList != null)
         {
             
-            if (stringList.Capacity == 1)
-            {
-                setLastDialogueText(stringList, stringList[index]);
-            }
-            else
-            {
-                setDialogueText(stringList, stringList[index]);
-            }
+            setDialogueText(stringList, stringList[index]);
+            Debug.Log("list index0" + index);
         }
         else
         {
@@ -113,11 +109,13 @@ public class LittleGirlDialogue : MonoBehaviour
             if (index < stringList.Count)
             {
                 StartCoroutine(WaitText(stringList, stringList[index]));
+                Debug.Log("list index1" + index);
             }
             else
             {
                 StartCoroutine(WaitLastText(stringList, stringList[index-1]));
-                
+                Debug.Log("list index2" + index);
+
             }
 
         }
