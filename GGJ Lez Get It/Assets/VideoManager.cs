@@ -23,7 +23,7 @@ public class VideoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{VPlayer.frame} {VPlayer.frameCount}");
+        //Debug.Log($"{VPlayer.frame} {VPlayer.frameCount}");
 
         if (!VPlayer.isPlaying) return;
         if(Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
