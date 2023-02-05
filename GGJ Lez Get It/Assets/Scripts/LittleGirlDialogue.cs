@@ -45,31 +45,31 @@ public class LittleGirlDialogue : MonoBehaviour
         //Random.Range(1, 3);
         timer += Time.deltaTime;
 
-        if (health.currentHP <= -25 && dialogueAt76bool)
-        {
-            showDialogueSet(dialogueAt75);
-            dialogueAt76bool = false;
-        }
-        else if (health.currentHP == -50)
-        {
-            showDialogueSet(dialogueAt50);
-        }
-        else if (health.currentHP == -75)
-        {
-            showDialogueSet(dialogueAt25);
-        }
-        else if (timer >= 25.0f && timer <= 27.0f)
-        {
-            showDialogueSet(Random1);
-        }
-        else if (timer >= 50.0f && timer <= 52.0f)
-        {
-            showDialogueSet(Random2);
-        }
-        else if (timer >= 75.0f && timer <= 77.0f)
-        {
-            showDialogueSet(Random3);
-        }
+        //if (health.currentHP <= -25 && dialogueAt76bool)
+        //{
+        //    showDialogueSet(dialogueAt75);
+        //    dialogueAt76bool = false;
+        //}
+        //else if (health.currentHP == -50)
+        //{
+        //    showDialogueSet(dialogueAt50);
+        //}
+        //else if (health.currentHP == -75)
+        //{
+        //    showDialogueSet(dialogueAt25);
+        //}
+        //else if (timer >= 25.0f && timer <= 27.0f)
+        //{
+        //    showDialogueSet(Random1);
+        //}
+        //else if (timer >= 50.0f && timer <= 52.0f)
+        //{
+        //    showDialogueSet(Random2);
+        //}
+        //else if (timer >= 75.0f && timer <= 77.0f)
+        //{
+        //    showDialogueSet(Random3);
+        //}
 
 
     }
