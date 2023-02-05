@@ -26,5 +26,6 @@ public class Goal : MonoBehaviour
         Camera.main.transform.SetParent(null);
         playerController.gameObject.SetActive(false);
         horrorAmbiance.CanPlay = false;
+        PlayerPrefs.SetInt("hasWon", 1);
     }
 }
