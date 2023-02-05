@@ -20,9 +20,9 @@ public class LittleGirlDialogue : MonoBehaviour
     [SerializeField] private List<string> dialogueAt50;
     [SerializeField] private List<string> dialogueAt25;
 
-    [SerializeField] private List<string> afterHiding1;
-    [SerializeField] private List<string> afterHiding2;
-    [SerializeField] private List<string> afterHiding3;
+    [SerializeField] public List<string> afterHiding1;
+    [SerializeField] public List<string> afterHiding2;
+    [SerializeField] public List<string> afterHiding3;
 
     [SerializeField] private List<string> closetoEnd;
 
@@ -74,9 +74,18 @@ public class LittleGirlDialogue : MonoBehaviour
 
     public void showDialogueSet(List<string> stringList)
     {
+        stringList.TrimExcess();
         if (stringList != null)
         {
-            setDialogueText(stringList, stringList[index]);
+            
+            if (stringList.Capacity == 1)
+            {
+                setLastDialogueText(stringList, stringList[index]);
+            }
+            else
+            {
+                setDialogueText(stringList, stringList[index]);
+            }
         }
         else
         {
