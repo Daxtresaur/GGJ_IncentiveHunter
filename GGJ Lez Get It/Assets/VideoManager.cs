@@ -12,21 +12,23 @@ public class VideoManager : MonoBehaviour
     void Start()
     {
         VPlayer = GetComponent<VideoPlayer>();
+        VPlayer.loopPointReached += loopPointReached;
+    }
+
+    private void OnDisable()
+    {
+        VPlayer.loopPointReached -= loopPointReached;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if((ulong)VPlayer.frame == VPlayer.frameCount)
-        {
-            VPlayer.Stop();
-            image.SetActive(false);
-        }
+        Debug.Log($"{VPlayer.frame} {VPlayer.frameCount}");
+
         if (!VPlayer.isPlaying) return;
         if(Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
         {
-            VPlayer.Stop();
-            image.SetActive(false);
+            StopMe();
         }
     }
 
@@ -34,5 +36,16 @@ public class VideoManager : MonoBehaviour
     {
         image.SetActive(true);
         VPlayer.Play();
+    }
+
+    public void StopMe()
+    {
+        VPlayer.Stop();
+        image.SetActive(false);
+    }
+
+    public virtual void loopPointReached(VideoPlayer vp)
+    {
+        StopMe();
     }
 }
