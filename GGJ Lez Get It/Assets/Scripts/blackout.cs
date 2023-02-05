@@ -12,6 +12,8 @@ public class blackout : MonoBehaviour
 	public float duration = 5f;
 	private bool mFaded = false;
 	public AudioSource treeChop;
+    public AudioClip endingMusic;
+
     public GameObject canvas;
 
 	private void Start()
@@ -82,6 +84,7 @@ public class blackout : MonoBehaviour
 		}
 		this.gameObject.SetActive(false);
 		this.canvas.SetActive(true);
+		SoundManager.instance.PlayMusic(endingMusic);
 
 	}
 

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class HorrorAmbiance : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class HorrorAmbiance : MonoBehaviour
     void Start()
     {
         isPlaying = true;
+        SoundManager.instance.PlayMusic(clips[3], true);
         StartCoroutine(LoopHorror());
     }
 

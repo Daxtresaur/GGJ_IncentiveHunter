@@ -577,6 +577,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
+      objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
       value: JumpingRootZone (4)
@@ -929,6 +941,18 @@ PrefabInstance:
     - target: {fileID: 1717032642609619270, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
       objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
@@ -1883,6 +1907,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
+      objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
       value: JumpingRootZone (3)
@@ -2669,7 +2705,7 @@ GameObject:
   - component: {fileID: 334889998}
   - component: {fileID: 334890000}
   - component: {fileID: 334889999}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DangerRootsMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,9 +2882,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1484459324}
     m_Modifications:
     - target: {fileID: 5204397859344369475, guid: 2a8cfdecbcf2e6b47ab1b2e83bc8baf8, type: 3}
+      propertyPath: chaseBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: de18f90af079d83498d10ffd88b72609, type: 3}
+    - target: {fileID: 5204397859344369475, guid: 2a8cfdecbcf2e6b47ab1b2e83bc8baf8, type: 3}
       propertyPath: chaseSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5204397859344369475, guid: 2a8cfdecbcf2e6b47ab1b2e83bc8baf8, type: 3}
+      propertyPath: defaultBGM
+      value: 
+      objectReference: {fileID: 8300000, guid: 2319d6b8b755bd64b85ec081e5ef1ffe, type: 3}
     - target: {fileID: 5204397859344369475, guid: 2a8cfdecbcf2e6b47ab1b2e83bc8baf8, type: 3}
       propertyPath: patrolSpeed
       value: 4
@@ -4913,6 +4957,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab727f80fcccf3f498b4f0bb8aca6c8c, type: 3}
   - {fileID: 8300000, guid: aa32970aea3e8484fad9f1fbcd20d5f3, type: 3}
   - {fileID: 8300000, guid: 681fe644c16174d49a7a67855177054d, type: 3}
+  - {fileID: 8300000, guid: 2319d6b8b755bd64b85ec081e5ef1ffe, type: 3}
   minRandomRange: 10
   maxRandomRange: 60
 --- !u!4 &748137922
@@ -6076,6 +6121,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
+      objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
       value: JumpingRootZone (6)
@@ -6331,6 +6388,18 @@ PrefabInstance:
     - target: {fileID: 1717032642609619270, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
       objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
@@ -6844,6 +6913,18 @@ PrefabInstance:
     - target: {fileID: 1717032642609619270, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
       objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
@@ -7630,6 +7711,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21953245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717032642609619273, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
+      objectReference: {fileID: 0}
     - target: {fileID: 1717032642609619274, guid: a095b50bd30fd4142a76599ca5a740d1, type: 3}
       propertyPath: m_Name
       value: JumpingRootZone (1)
@@ -8110,6 +8203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5915360873550530462, guid: 307dcf50495154f4f9368123850ee4c4, type: 3}
+      propertyPath: MinDistance
+      value: 61.168823
+      objectReference: {fileID: 0}
     - target: {fileID: 5915360874436791705, guid: 307dcf50495154f4f9368123850ee4c4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9160,6 +9257,7 @@ MonoBehaviour:
   image: {fileID: 1498438813}
   duration: 5
   treeChop: {fileID: 1498438811}
+  endingMusic: {fileID: 8300000, guid: 96776f2e0ad44844fa7a894b6cf0e0e0, type: 3}
   canvas: {fileID: 133293582}
 --- !u!82 &1498438811
 AudioSource:
@@ -9173,7 +9271,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 57f3e83f0517278448050e25e4e5715d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -49,8 +49,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip, bool looping = true)
     {
-        Ambience.clip = clip;
-        Ambience.loop = looping;
-        Ambience.Play();
+        Music.clip = clip;
+        Music.loop = looping;
+        Music.Play();
     }
+
+    public void StopMusic()
+    {
+        Music.Stop();
+    }
+
 }
