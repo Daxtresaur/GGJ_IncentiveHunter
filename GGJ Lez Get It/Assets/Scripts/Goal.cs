@@ -8,11 +8,13 @@ public class Goal : MonoBehaviour
     public blackout Blackout;
     GameObject monster;
     PlayerController playerController;
-    private void Awake()
+    HorrorAmbiance horrorAmbiance;
+    private void Start()
     {
         canvas.SetActive(false);
         monster = FindObjectOfType<MonsterBehavior>().gameObject;
         playerController = FindObjectOfType<PlayerController>();
+        horrorAmbiance = FindObjectOfType<HorrorAmbiance>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,5 +25,6 @@ public class Goal : MonoBehaviour
         Destroy(monster);
         Camera.main.transform.SetParent(null);
         playerController.gameObject.SetActive(false);
+        horrorAmbiance.CanPlay = false;
     }
 }

@@ -64,6 +64,7 @@ public class FieldOfView : MonoBehaviour
     }
 }
 
+#if false
 [CustomEditor(typeof(FieldOfView))]
 public class FieldOfViewEditor : Editor
 {
@@ -87,3 +88,4 @@ public class FieldOfViewEditor : Editor
     }
 
 }
+#endif
