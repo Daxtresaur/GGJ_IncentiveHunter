@@ -17,6 +17,11 @@ public class VideoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if((ulong)VPlayer.frame == VPlayer.frameCount)
+        {
+            VPlayer.Stop();
+            image.SetActive(false);
+        }
         if (!VPlayer.isPlaying) return;
         if(Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current.leftButton.wasPressedThisFrame)
         {
