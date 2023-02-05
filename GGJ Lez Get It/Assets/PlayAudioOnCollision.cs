@@ -14,7 +14,7 @@ public class PlayAudioOnCollision : MonoBehaviour
         if (!playOnEnter) return;
         SoundManager.instance.PlaySFX(clip);
 
-        
+#if false
         int index = Random.Range(1, 3);
         if (FindObjectOfType<LittleGirlDialogue>() == null)
         {
@@ -32,6 +32,7 @@ public class PlayAudioOnCollision : MonoBehaviour
         {
             FindObjectOfType<LittleGirlDialogue>().showDialogueSet(FindObjectOfType<LittleGirlDialogue>().afterHiding3);
         }
+#endif
     }
 
     private void OnTriggerExit(Collider other)
