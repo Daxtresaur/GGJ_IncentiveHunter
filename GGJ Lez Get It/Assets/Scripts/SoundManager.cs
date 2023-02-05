@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
         }
     }
     [SerializeField] private AudioSource SFX;
+    public AudioSource SFXSource { get { return SFX; } }
     [SerializeField] private AudioSource Ambience;
     [SerializeField] private AudioSource Music;
 
