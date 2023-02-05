@@ -43,6 +43,7 @@ public class SafeZone : MonoBehaviour
 
         lb = other.GetComponentInChildren<LightBehavior>();
         lb.IncreaseLight();
+        lb.isDecreasing = false;
         //StartCoroutine(DecreaseSafe());
 
         if (other.TryGetComponent(out HealthComponent HP))
@@ -59,6 +60,7 @@ public class SafeZone : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         lb.DecreaseLight();
+        lb.isDecreasing = true;
         lb = null;
         HorrorAmbiance.Instance.CanPlay = true;
     }
