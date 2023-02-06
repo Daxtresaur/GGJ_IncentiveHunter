@@ -11,6 +11,8 @@ public class LightBehavior : MonoBehaviour
     private bool isRunning = false;
 
     private float targetSize;
+
+    public bool isDecreasing = true;
     public bool LightIsGone
     {
         get
@@ -36,8 +38,16 @@ public class LightBehavior : MonoBehaviour
     {
         //slight.spotAngle = maxAngle;
         //targetSize = maxAngle;
-        slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
-        slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
+        if (isDecreasing)
+        {
+            slight.spotAngle -= Time.fixedDeltaTime * shrinkRate;
+            slight.spotAngle = Mathf.Clamp(slight.spotAngle, 0.0f, maxAngle);
+            if (slight.spotAngle <= 1.0f)
+            {
+                gameObject.GetComponentInParent<PlayerController>().SelfDestruct();
+            }
+        }
+        
     }
 
     public void KillLight()

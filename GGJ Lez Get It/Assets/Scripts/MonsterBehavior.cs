@@ -12,6 +12,9 @@ public class MonsterBehavior : MonoBehaviour
     public AudioSource source;
     public AudioClip[] FoundYouAudio;
 
+    public AudioClip chaseBGM;
+    public AudioClip defaultBGM;
+
     //[SerializeField] private float speed;
     [SerializeField] private float patrolSpeed = 1.0f;
     public float PatrolSpeed { get { return patrolSpeed; } }
@@ -122,6 +125,8 @@ public class PatrolState : MonsterStates
         base.OnStart(behavior);
         behavior.animator.speed = 0.5f;
         behavior.source.volume = 1.0f;
+        SoundManager.instance.StopMusic();
+        SoundManager.instance.PlayMusic(behavior.defaultBGM);
         behavior.Agent.speed = behavior.PatrolSpeed;
     }
     public override void OnUpdate(MonsterBehavior behavior)
@@ -145,6 +150,8 @@ public class ChaseState : MonsterStates
         AudioClip[] clips = behavior.FoundYouAudio;
         int RandomRange = Random.Range(0, clips.Length);
         SoundManager.instance.PlaySFX(clips[RandomRange]);
+        SoundManager.instance.StopMusic();
+        SoundManager.instance.PlayMusic(behavior.chaseBGM);
         behavior.Agent.speed = behavior.ChaseSpeed;
     }
 

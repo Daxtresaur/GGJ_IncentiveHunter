@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Run",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "2ff55576-5f8e-4ec8-9c76-0e12a77b9157",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -148,17 +148,6 @@
                     "name": "",
                     "id": "bec3ed0c-5bfb-4984-aed4-073ec052a5b9",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Throw",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "47e4d237-109c-413a-bcd7-688ff407a77a",
-                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

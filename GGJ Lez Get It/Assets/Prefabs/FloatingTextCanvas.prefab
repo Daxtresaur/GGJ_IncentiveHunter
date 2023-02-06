@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
-  offset: {x: 0, y: 0, z: 2}
+  offset: {x: -0.46, y: 0, z: 2}
   cam: {fileID: 0}
 --- !u!114 &5757422857830210107
 MonoBehaviour:

@@ -424,23 +424,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 742.8978
+      value: 1673.7361
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 55.175
+      value: 281.5265
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.5405
+      value: -1.5404
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851642, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5876
+      value: 3.8592
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_text
       value: "I\u2019ve been fighting you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontSize
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_fontColor.b
@@ -453,6 +457,14 @@ PrefabInstance:
     - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_fontColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3875770516625851643, guid: b94684356b4818a4290bc5698b45e6cb, type: 3}
       propertyPath: m_fontColor32.rgba

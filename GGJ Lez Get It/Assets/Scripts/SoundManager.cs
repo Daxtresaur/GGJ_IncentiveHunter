@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
         }
     }
     [SerializeField] private AudioSource SFX;
+    public AudioSource SFXSource { get { return SFX; } }
     [SerializeField] private AudioSource Ambience;
     [SerializeField] private AudioSource Music;
 
@@ -48,8 +49,14 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip, bool looping = true)
     {
-        Ambience.clip = clip;
-        Ambience.loop = looping;
-        Ambience.Play();
+        Music.clip = clip;
+        Music.loop = looping;
+        Music.Play();
     }
+
+    public void StopMusic()
+    {
+        Music.Stop();
+    }
+
 }

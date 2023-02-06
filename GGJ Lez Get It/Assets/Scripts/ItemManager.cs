@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class ItemManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip stoneThrow;
     [SerializeField] private TextMeshProUGUI m_TextMeshPro;
     [SerializeField] private int lureAmount;
     public int LureAmount 
@@ -32,8 +33,15 @@ public class ItemManager : MonoBehaviour
 
         if (lurePrefab == null) return;
         lureAmount--;
-        m_TextMeshPro.SetText($"MONSTER LURE: {lureAmount}");
+        m_TextMeshPro.SetText($"MONSTER LURE x {lureAmount}");
         GameObject lureClone = Instantiate(lurePrefab, transform.position, Quaternion.identity);
+        SoundManager.instance.PlaySFX(stoneThrow);
         Destroy(lureClone, 10.0f);
+    }
+
+    public void GetLure()
+    {
+        lureAmount++;
+        lureAmount = Mathf.Clamp(lureAmount, 0, 3);
     }
 }
